@@ -1,0 +1,5 @@
+﻿<!-- <h class="login"><u>Login</u></h><br><br> -->
+<!-- <input class="emailids" type="text" id="e" name="eml" placeholder="E-mail ID"/><br><br>
+<!-- <input class="passwords" type="password" id="p" name="pssword" placeholder="Password"/></img><br><br>
+<button><a href="{% url 'TClone:homepage' %}" name='homepage' type= 'submit'>Get Inside</a></button> -->
+

@@ -1,0 +1,3 @@
+﻿Django Location:
+
+/usr/lib/python3/dist-packages/django/__init__.py

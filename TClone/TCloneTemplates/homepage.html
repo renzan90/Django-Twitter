@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+
+    <style>
+      body{
+        background-image:url("https://i.pinimg.com/originals/d3/ae/aa/d3aeaa73d45d14c82ae2d1ab3e6f6f8d.jpg");
+      }
+      a {
+        text-decoration: none;
+      }
+      .tweet{
+        height: 100px;
+        width: 300px;
+        position: relative;
+        padding: 20px;
+        margin-top: 1px;
+        margin-left: 500px;
+        text-align: left;
+        border-radius: 10px;
+      }
+      .beten{
+        margin-left: 1200px;
+        border-radius: 10px;
+        height: 40px;
+        width: 85px;
+        padding: 3px;
+        background-color:tea;
+      }
+      .tweet2{
+        margin-top:130px;
+        margin-left:525px;
+      }
+      .beten:hover{
+          background-color: transparent; 
+        }
+      span{
+        height: 100px;
+        width: 300px;
+        padding: 3px;
+        background-color: white;
+        display:block;
+        border-radius:20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form method="POST" name="home" action="{% url 'TClone:logout' %}">
+        {% csrf_token %}
+         <button class="beten" type= 'submit'>Logout</a></button><br><br>
+      </form>
+    </div>
+
+    <form method="POST" action="{% url 'TClone:home' %}" class="tweet">
+      {% csrf_token %}
+      {{form.text}}<br><br>
+      <button type='submit' name="tweet" value="Tweet">Tweet</button>
+    </form>
+
+    <div class="tweet2">
+    {% for tweet in tweets reversed%}
+      <span>{{tweet.text}}</span><br><br>
+    {% endfor %}
+    </div>
+  </body>
+</html>

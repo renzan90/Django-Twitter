@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+
+        body{
+          overflow:hidden;
+        }
+
+        .pic{
+
+          background-image: url("http://1.bp.blogspot.com/-ht941j_LoOU/UY5Q0yV5__I/AAAAAAAAADc/MTNvCeHaqUU/s1600/%25D0%2592%25D0%25B8%25D1%2580%25D0%25B3%25D0%25B8%25D0%25BD%25D1%2581%25D0%25BA%25D0%25B8%25D0%25B9+%25D0%25BA%25D0%25B0%25D1%2580%25D0%25B4%25D0%25B8%25D0%25BD%25D0%25B0%25D0%25BB.jpg");
+          height:100vh;
+          width:100%;
+          background-size:cover;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          border: none;
+          position:absolute;
+          top:0;
+          left:0;
+        }
+
+      .username{
+
+        background-color: transparent ;
+        text-align: center;
+        height: 25px;
+        width:100%;
+        border: none;
+        border-bottom: 1px solid #000000;
+        }
+ 
+      .password{
+        background-color:transparent;
+        text-align: center;
+        border: 1px solid black;
+        width:100%;
+        float: left;
+        margin: 0;
+        padding: 0;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        }
+
+      form{
+        margin-left: 850px;
+        margin-top: 100px;
+        border-radius:20px;
+        box-sizing: content-box;
+        width: 300px;
+        height: 100px;
+        padding: 30px;  
+        background-color: transparent;
+        }
+
+      .login{
+          margin-left: 95px;
+          font-size: 35px;
+          border-bottom: black;
+        }
+
+      button{
+          background-color:transparent;
+          border-radius: 20px;
+          width: 200px;
+          height:50px;
+          margin-left: 60px;
+          border-color: black;
+
+        }
+
+      button:hover{
+          background-color: crimson; 
+        }
+
+        a {text-decoration: none;}
+
+    </style> 
+    
+    <title>Login</title>
+  </head>
+  
+  <body>
+    <div class="pic">
+      <form method="POST" action="{% url 'TClone:login' %}">
+        {% block content %}
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          {{form}}
+          <button type="submit">Get Inside</button>
+        {% endblock content %}
+      </form>
+    </div>  
+  </body>
+  
+  
+ 
